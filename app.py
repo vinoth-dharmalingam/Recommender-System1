@@ -40,7 +40,7 @@ def render_movie_card(movie: pd.Series, similarity: float | None = None) -> None
     )
 
 
-st.set_page_config(page_title="Reelwise | Movie Discovery", page_icon="🎬", layout="wide")
+st.set_page_config(page_title="Movie Recommendation System (MVRS) | Movie Discovery", page_icon="🎬", layout="wide")
 st.markdown(
     """
     <style>
@@ -48,6 +48,7 @@ st.markdown(
     :root { --ink:#14231f; --muted:#65736d; --paper:#f4f5ef; --line:#dce2d9; --forest:#173c32; --lime:#d4f36b; }
     .stApp { background:var(--paper); color:var(--ink); }
     [data-testid="stHeader"] { background:transparent; }
+    [data-testid="stAppDeployButton"] { display:none; }
     .block-container { max-width:1320px; padding-top:2rem; padding-bottom:4rem; }
     html, body, [class*="css"] { font-family:'DM Sans',sans-serif; }
     h1, h2, h3 { font-family:'Space Grotesk',sans-serif !important; color:var(--ink); }
@@ -82,7 +83,7 @@ movies = load_movies()
 genre_options = sorted({genre for values in movies["genres"] for genre in values.split("|")})
 
 st.markdown(
-    '<div class="brand-row"><div class="brand-mark">R</div><h1>Reelwise</h1><div class="brand-note">A better next watch.</div></div>',
+    '<div class="brand-row"><div class="brand-mark">R</div><h1>Movie Recommendation System (MVRS)</h1><div class="brand-note">A better next watch.</div></div>',
     unsafe_allow_html=True,
 )
 st.markdown(
